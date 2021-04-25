@@ -8,6 +8,10 @@ sed 's/"//g'  .filter2.json  > .filter3.json
 cat .filter3.json | sed -r 's/^.{8}//g' > .filter4.json
 sed 's/ : /: /g' .filter4.json > .filter5.json
 sed 's/Country_Region/Country/g' .filter5.json > .filter6.json
+var=$(date +"%FORMAT_STRING")
+now=$(date +"%m_%d_%Y")
+printf "%s\n" $now
+today=$(date +"%Y-%m-%d")
 clear
-cat .filter6.json
-echo 
+cat .filter6.json > ${today}
+cat .filter6.json 
